@@ -157,21 +157,34 @@ def user_stats(df):
 
 def main():
     while True:
+        # Get user input for city, month, and day
         city, month, day = get_filters()
+
+        # Load data based on user input
         df = load_data(city, month, day)
 
+        # Display time statistics
         time_stats(df)
+
+        # Display station statistics
         station_stats(df)
+
+        # Display trip duration statistics
         trip_duration_stats(df)
+
+        # Display user statistics
         user_stats(df)
 
-        # Restart input asking to user for a restart? If answer is yes, it will restart
+        # Ask the user if they want to restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
+
+        # If the answer is not 'yes', exit the loop
         if restart.lower() != 'yes':
             break
 
 if __name__ == "__main__":
     main()
+
 
 import time
 import pandas as pd

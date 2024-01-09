@@ -11,8 +11,11 @@ Original file is located at
 
 # This project has passed the test successfully after 12 try :)
 
+#we import time for some time-related functions
 import time
+#we import pandas for data analysis & manipulation
 import pandas as pd
+#we import numpy for creating arrays and manipulating numerical data inside them
 import numpy as np
 
 CITY_DATA = {'chicago': 'chicago.csv',
@@ -25,7 +28,7 @@ DAYS = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday
 def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     while True:
-        # get user input for city
+        # get user input for city between 3 of them
         city = input('Enter the name of the city (Chicago, New York City, Washington): ').lower()
         if city in CITY_DATA:
             break
@@ -127,6 +130,7 @@ def trip_duration_stats(df):
     print('-'*40)
 
 def user_stats(df):
+    # We need to display the description
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
@@ -158,20 +162,34 @@ def user_stats(df):
 
 def main():
     while True:
+        # Get user input for city, month, and day
         city, month, day = get_filters()
+
+        # Load data based on user input
         df = load_data(city, month, day)
 
+        # Display time statistics
         time_stats(df)
+
+        # Display station statistics
         station_stats(df)
+
+        # Display trip duration statistics
         trip_duration_stats(df)
+
+        # Display user statistics
         user_stats(df)
 
+        # Ask the user if they want to restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
+
+        # If the answer is not 'yes', exit the loop
         if restart.lower() != 'yes':
             break
 
 if __name__ == "__main__":
     main()
+
 
 import time
 import pandas as pd

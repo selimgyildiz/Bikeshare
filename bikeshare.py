@@ -125,6 +125,7 @@ def trip_duration_stats(df):
     print('-'*40)
 
 def user_stats(df):
+    # We need to display the description
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
@@ -164,6 +165,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
+        # Restart input asking to user for a restart? If answer is yes, it will restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break

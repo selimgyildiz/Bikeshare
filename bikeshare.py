@@ -7,6 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1HuqB59yFtj_PyQFAj69hbGsBqgofYVc5
 """
 
+# This project has been made for Udacity Course by Selim Gorkem Yildiz
+
+# This project has passed the test successfully after 12 try :)
+
 import time
 import pandas as pd
 import numpy as np
